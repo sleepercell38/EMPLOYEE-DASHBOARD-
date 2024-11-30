@@ -46,7 +46,7 @@ const Login = ({formhandler}) => {
                             </label>
                             <h1>forget password?</h1>
                         </div>
-                        <button className=' rounded-lg font-semibold mt-6 bg-slate-700'>Log-In</button>
+                        <button className=' rounded-lg font-semibold mt-6 bg-green-800'>Log-In</button>
 
 
                     </form>
