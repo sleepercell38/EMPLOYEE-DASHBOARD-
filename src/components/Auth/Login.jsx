@@ -29,6 +29,7 @@ const Login = ({formhandler}) => {
                         }}
 
 
+
                             className="p-1.5 font-semibold  text-white  rounded-lg bg-transparent  border border-slate-700" type="email" placeholder="Email" />
                         <input required
                             value={password}
