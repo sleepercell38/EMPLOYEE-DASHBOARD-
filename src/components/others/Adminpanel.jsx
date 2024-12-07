@@ -19,8 +19,8 @@ const Adminpanel = () => {
         <br />
         <br />
         <h2>Category</h2>
-        <input required className="w-60  border border-slate-700 bg-slate-800 px-2  rounded-sm" type="text" placeholder='Dev, UI-design,AI..etc'/>
 
+        <input required className="w-60  border border-slate-700 bg-slate-800 px-2  rounded-sm" type="text" placeholder='Dev, UI-design,AI..etc'/>
       </div>
 
       <div className='flex flex-col items-center'>
