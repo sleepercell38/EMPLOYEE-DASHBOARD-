@@ -3,6 +3,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserTie } from '@fortawesome/free-solid-svg-icons'
 
 const Headeradmin = () => {
+
+     const logoutuser=()=>{
+
+       localStorage.setItem("loggedinuser", "")
+       window .location.reload()
+
+     }
+
+
+
+
+
+
+
   return (
    <div className='flex items-center justify-between py-5 px-10'>
      <div>
@@ -12,7 +26,7 @@ const Headeradmin = () => {
       <h1 className='text-2xl font-black '>Administrator Dashboard &nbsp; &nbsp; &nbsp;<FontAwesomeIcon icon={faUserTie} /></h1>
     </div>
 
-    <button className='bg-red-700 rounded px-2 font-semibold'> Logout</button>
+    <button onClick={logoutuser} className='bg-red-700 rounded px-2 font-semibold'> Logout</button>
     
    </div>
    

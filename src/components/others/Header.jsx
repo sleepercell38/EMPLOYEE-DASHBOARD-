@@ -5,8 +5,10 @@ import Login from '../Auth/Login'
 
 const Header = ({data}) => {
 
-     const logoutbutton=(e)=>{
-       {e.target ? <Login/>: ""}
+     const logoutbutton=()=>{
+      localStorage.setItem("loggedinuser", "")
+      window .location.reload()
+
      }
 
 
@@ -19,9 +21,9 @@ const Header = ({data}) => {
       <h1 className='text-2xl font-black '>Employee Dashboard &nbsp;  &nbsp;  <FontAwesomeIcon icon={faUser} /></h1>
     </div>
 
-    <button onClick={(e)=>{
-        logoutbutton(e)
-    }}className='bg-red-700 rounded px-2 font-semibold'> Logout</button>
+    <button onClick={
+        logoutbutton
+    }className='bg-red-700 rounded px-2 font-semibold'> Logout</button>
    </div>
    
   )
