@@ -4,7 +4,6 @@ import Tasklist from '../others/Tasklist'
 import Taskcards from '../others/Taskcards'
 
 const Employeedashboard = ({data}) => {
-  console.log(data)
   return (
    
    <div className='bg-slate-900 h-screen'>
