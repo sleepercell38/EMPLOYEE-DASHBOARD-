@@ -2,12 +2,13 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserTie } from '@fortawesome/free-solid-svg-icons'
 
-const Headeradmin = () => {
+const Headeradmin = (props) => {
 
      const logoutuser=()=>{
 
        localStorage.setItem("loggedinuser", "")
-       window .location.reload()
+      //  window .location.reload()
+       props.changeuser("")
 
      }
 

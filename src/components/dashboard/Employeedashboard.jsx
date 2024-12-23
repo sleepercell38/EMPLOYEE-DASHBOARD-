@@ -3,15 +3,15 @@ import Header from '../others/Header'
 import Tasklist from '../others/Tasklist'
 import Taskcards from '../others/Taskcards'
 
-const Employeedashboard = ({data}) => {
+const Employeedashboard = (props) => {
   return (
    
    <div className='bg-slate-900 h-screen'>
      
    
-   <Header data={data} />
-   <Tasklist   data={data} />
-   <Taskcards  data={data} />
+   <Header   changeuser={props.changeuser} data={props.data} />
+   <Tasklist   data={props.data} />
+   <Taskcards  data={props.data} />
    </div>
   )
 }

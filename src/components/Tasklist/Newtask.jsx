@@ -1,6 +1,18 @@
 import React from 'react'
+import { useState } from 'react'
 
 const Newtask = ({data}) => {
+  const [istaskaccepted,setistaskaccepted]=useState(false)
+    
+  const handleclick=()=>{
+    setistaskaccepted(true)
+    data.taskCount.accepted=data.taskCount.accepted+1
+  }
+
+
+
+
+ 
   return (
     <div className=' flex-shrink-0 h-full w-[300px] bg-slate-950 rounded-xl '> 
 
@@ -14,12 +26,23 @@ const Newtask = ({data}) => {
        </h2>
        <p className='mt-5'>{data.taskDescription}</p>
        </div>
-
-
+              
        <div className='flex items-center justify-between p-4 text-sm'>
-        <button className='bg-green-950 rounded px-1' >Mark as Completed</button>
-        <button className='bg-red-900 rounded px-1'>Mark as Failed</button>
-       </div>
+       {istaskaccepted
+       ?  <div className="flex items-center gap-2 justify-between w-full">
+            <button className="bg-green-950 rounded px-2 py-1">
+              Mark as Completed
+            </button>
+            <button className="bg-red-900 rounded px-2 py-1">Mark as Failed</button>
+          </div>
+          : <div className='flex items-center justify-between p-4 text-sm'>
+          <button onClick={handleclick}className='bg-blue-950 rounded px-1' >Accept Task</button>
+          
+         </div> }
+           
+          </div>
+
+      
       </div>
       
   )

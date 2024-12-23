@@ -4,10 +4,10 @@ import Adminpanel from '../others/Adminpanel'
 import Alltask from '../others/Alltask'
 import Headeradmin from '../others/Headeradmin'
 
-const Admindashboard = () => {
+const Admindashboard = (props) => {
   return (
     <div>
-      <Headeradmin/>
+      <Headeradmin changeuser={props.changeuser}/>
       <Adminpanel/>
       <Alltask/>
     </div>

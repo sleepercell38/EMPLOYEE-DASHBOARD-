@@ -8,28 +8,28 @@ import { Authcontext } from './contexts/Authprovider'
 
 const App = () => {
   
-    const authdata=useContext(Authcontext)
-    console.log(authdata);
+     const [userData,setuserData]= useContext(Authcontext)
+  
       
-    //  useEffect(()=>{
-    //     if (authdata){
-    //       const loggedinuser= localStorage.getItem("loggedinuser")
-    //       if(loggedinuser){
-    //         setuser(loggedinuser.role)
-    //       }
-    //     }
-    //  },[authdata])
+     useEffect(()=>{
+        if (userData){
+          const loggedinuser= localStorage.getItem("loggedinuser")
+          if(loggedinuser){
+            setuser(loggedinuser.role)
+          }
+        }
+     },[userData])
 
 
      const [user,setuser]=useState()
      const [loggedinUserdata,setloggedinUserdata]=useState(null)
 
      const formhandler=(email,password)=>{
-        if(authdata&&  authdata.admin.find((e)=> email==e.email && password == e.password) ){
+        if(email=="admin@example.com" && password=="123"){
            localStorage.setItem("loggedinuser",JSON.stringify({"role":"admin"}))
             setuser("admin")
-        }else if( authdata){
-           const employee=authdata.employees.find((e)=> email==e.email && password == e.password)
+        }else if( userData){
+           const employee=userData.find((e)=> email==e.email && password == e.password)
           if(employee){
             setloggedinUserdata(employee);
             localStorage.setItem("loggedinuser",JSON.stringify({"role":"employee"}))
@@ -44,8 +44,8 @@ const App = () => {
   return (
     <div>
        {!user ? <Login formhandler={formhandler}/>:""}
-       {user == "admin"? <Admindashboard/> :""}
-       {user == "employee"? <Employeedashboard   data={loggedinUserdata}/> :""}
+       {user == "admin"? <Admindashboard  changeuser={setuser}/> :""}
+       {user == "employee"? <Employeedashboard changeuser={setuser}  data={loggedinUserdata}/> :""}
     </div>
   )
 }
